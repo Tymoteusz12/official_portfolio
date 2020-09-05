@@ -1,12 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Home from './containers/Home/Home';
+import classes from './App.module.css';
+import {Switch, Route, Redirect} from 'react-router-dom';
+class App extends Component {
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+
+  render(){
+    let pageToRender = (
+      <Switch>
+        <Route path='/home' component={Home}/>
+        <Redirect from='/' to='/home'/>
+      </Switch>
+    )
+    return (
+      <div className={classes.App}>
+        {pageToRender}
+      </div>
+    );
+  }
 }
 
 export default App;
