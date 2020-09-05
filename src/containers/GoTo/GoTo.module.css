@@ -4,7 +4,7 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     color: black;
     font-size: 44px;
@@ -12,7 +12,7 @@
 }
 
 .right:hover, .left:hover{
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .right i, .left i{
