@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import classes from './Home.module.css';
-import GoTo from '../GoTo/GoTo';
 
 class Home extends Component {
 
@@ -15,15 +14,12 @@ class Home extends Component {
                     </div>
                 <div className={classes.general}>
                     <div className={classes.select}>
-                        <p>Dla celów rekrutacyjnych stworzyłem
-                            stronę internetową, poświęconą moim
-                            własnym projektom.
+                        <p>Odwiedź stronę z moimi własnymi projektami
                         </p>
                         <div className={classes.projectsButton}><p>Sprawdź projekty</p></div>
                     </div>
                     <div className={classes.select}>
-                        <p>Jeśli chcesz pozostać na stronie
-                            i poznać moje umiejętności, kliknij w przycisk.
+                        <p>Dowiedz się, dlaczego warto mnie zatrudnić
                         </p>
                         <div className={classes.stayButton}><p>Umiejętności</p></div>
                     </div>

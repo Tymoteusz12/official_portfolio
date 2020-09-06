@@ -3,6 +3,7 @@ import Home from './containers/Home/Home';
 import classes from './App.module.css';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Navigation from './containers/Navigation/Navigation';
+import Skills from './containers/Skills/Skills';
 class App extends Component {
 
 
@@ -10,6 +11,7 @@ class App extends Component {
     let pageToRender = (
       <Switch>
         <Route path='/Start' component={Home}/>
+        <Route path='/Skills' component={Skills}/>
         <Redirect from='/' to='/Start'/>
       </Switch>
     )
