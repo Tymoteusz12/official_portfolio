@@ -1,0 +1,45 @@
+.intro{
+    margin: auto;
+    text-align: left;
+    width: 70%;
+    padding: 20px;
+}
+
+.wrapper h2, .shortAbout, .intro ul{
+    letter-spacing: 1px;
+    line-height: 150%;
+}
+
+.wrapper h2{
+    font-size: 44px;
+    margin: 10px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.shortAbout{
+    font-size: 20px;
+}
+
+.wrapper{
+    margin: auto;
+    width: 90%;
+    margin-top: 140px;
+    padding-bottom: 150px;
+}
+
+.wrapper ul{
+    font-size: 16px;
+    list-style-type: circle;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.wrapper ul li{
+    margin: 0px 20px;
+}
+
+
