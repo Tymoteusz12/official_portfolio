@@ -1,13 +1,13 @@
 .intro{
     margin: auto;
     text-align: left;
-    width: 70%;
+    width: 80%;
     padding: 20px;
 }
 
 .wrapper h2, .shortAbout, .intro ul{
     letter-spacing: 1px;
-    line-height: 150%;
+    line-height: 140%;
 }
 
 .wrapper h2{
@@ -39,7 +39,7 @@
 }
 
 .wrapper ul li{
-    margin: 0px 20px;
+    margin: 5px 20px;
 }
 
 

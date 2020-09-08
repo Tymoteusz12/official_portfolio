@@ -1,3 +1,25 @@
 .hobbies{
     padding: 150px 0;
 }
+
+.hobbies ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.hobbies ul li{
+    display: flex;
+    font-size: 22px;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+    min-height: 100px;
+    background-color: lightgray;
+    box-shadow: 4px 6px 6px 2px gray;
+    margin: 10px;
+    padding: 15px 25px;
+}

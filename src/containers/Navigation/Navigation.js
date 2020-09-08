@@ -14,7 +14,6 @@ class Navigation extends Component{
             <div className={classes.list}>
                     {this.props.lang === 'PL' 
                     ? this.state.nav_bars_pl.map(path => {
-                        console.log(navID);
                         return (
                             <NavLink 
                             key={path}

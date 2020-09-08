@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classes from '../Frontend/Frontend.module.css';
-
+import classesExtra from './Extra.module.css';
 const Extra = props => {
 
     const [abilities, setAbilities] = useState([
@@ -17,8 +17,7 @@ const Extra = props => {
     const [headerENG] = useState('Also my skills include: ');
 
     return(
-        <div style={{padding: '100px 0 150px 0',
-                    boxShadow: '0px 24px 1px -24px black'}}>
+        <div className={classesExtra.outside}>
             <h2>{headerPL}</h2>
             <div className={classes.abilities}>
                 <ul>

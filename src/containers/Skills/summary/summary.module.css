@@ -1,4 +1,5 @@
 .Summary{
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -22,4 +23,5 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    box-shadow: 6px 2px 3px 2px gray;
 }

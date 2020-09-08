@@ -1,0 +1,12 @@
+.outside{
+    padding: 100px 0 150px 0;
+    box-shadow: 0px 24px 1px -24px black;
+}
+
+.outside h2{
+    margin: 30px auto;
+    line-height: 150%;
+    letter-spacing: 1px;
+    font-size: 32px;
+    width: 80%;
+}
