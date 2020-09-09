@@ -7,7 +7,8 @@
     margin: 30px auto;
     line-height: 150%;
     letter-spacing: 1px;
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: 600;
     width: 80%;
 }
 
@@ -38,4 +39,20 @@
     box-shadow: 4px 6px 6px 2px gray;
     margin: 10px;
     padding: 15px;
+}
+
+@media (max-width: 600px){
+    .wrapper{
+        padding-top: 100px;
+    }
+    .wrapper h2{
+        width: 90%;
+        font-size: 28px;
+    }
+
+    .abilities ul li{
+        width: 180px;
+        padding: 8px;
+    }
+
 }

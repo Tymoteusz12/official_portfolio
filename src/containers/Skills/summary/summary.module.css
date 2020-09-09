@@ -25,3 +25,15 @@
     background-repeat: no-repeat;
     box-shadow: 6px 2px 3px 2px gray;
 }
+
+@media (max-width: 1200px){
+    .Summary{
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px){
+    .Summary{
+        width: 90%;
+    }
+}

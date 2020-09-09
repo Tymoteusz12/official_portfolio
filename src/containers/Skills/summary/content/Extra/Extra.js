@@ -4,8 +4,16 @@ import classesExtra from './Extra.module.css';
 const Extra = props => {
 
     const [abilities, setAbilities] = useState([
+        {name: 'Software architecture',
+        image: 'fas fa-recycle'},
+        {name: 'DOM/jQuery',
+        image: 'fas fa-tasks'},
+        {name: 'RWD',
+        image: 'fas fa-wrench'},
+        {name: 'SPA',
+        image: 'fas fa-history'},
         {name: 'C/C++',
-        image: ''},
+        image: 'fab fa-cuttlefish'},
         {name: 'OpenGL',
         image: 'fas fa-cube'},
         {name: 'GLSL',

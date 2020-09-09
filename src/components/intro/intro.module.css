@@ -42,4 +42,29 @@
     margin: 5px 20px;
 }
 
+@media (max-width: 800px){
+    .intro{
+        width: 95%;
+        padding: 5px;
+    }
+
+    .shortAbout{
+        font-size: 18px;
+    }
+
+    .wrapper h2{
+        font-size: 36px;
+        margin: 10px 0;
+    }
+
+    .wrapper ul{
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .wrapper ul li{
+        margin: 5px 15px;
+    }
+}
+
 
