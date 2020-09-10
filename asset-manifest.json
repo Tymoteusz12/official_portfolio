@@ -1,23 +1,29 @@
 {
   "files": {
-    "main.css": "/official_portfolio/static/css/main.eab24d3c.chunk.css",
-    "main.js": "/official_portfolio/static/js/main.a80faab1.chunk.js",
-    "main.js.map": "/official_portfolio/static/js/main.a80faab1.chunk.js.map",
+    "main.css": "/official_portfolio/static/css/main.a7fa04aa.chunk.css",
+    "main.js": "/official_portfolio/static/js/main.bfe035ab.chunk.js",
+    "main.js.map": "/official_portfolio/static/js/main.bfe035ab.chunk.js.map",
     "runtime-main.js": "/official_portfolio/static/js/runtime-main.48872efb.js",
     "runtime-main.js.map": "/official_portfolio/static/js/runtime-main.48872efb.js.map",
-    "static/js/2.180d86fb.chunk.js": "/official_portfolio/static/js/2.180d86fb.chunk.js",
-    "static/js/2.180d86fb.chunk.js.map": "/official_portfolio/static/js/2.180d86fb.chunk.js.map",
+    "static/js/2.3239014c.chunk.js": "/official_portfolio/static/js/2.3239014c.chunk.js",
+    "static/js/2.3239014c.chunk.js.map": "/official_portfolio/static/js/2.3239014c.chunk.js.map",
     "index.html": "/official_portfolio/index.html",
-    "precache-manifest.c58d361d712328c9401b3c239962d85c.js": "/official_portfolio/precache-manifest.c58d361d712328c9401b3c239962d85c.js",
+    "precache-manifest.6345bee0bc5ce6b49a37cbda66d27c65.js": "/official_portfolio/precache-manifest.6345bee0bc5ce6b49a37cbda66d27c65.js",
     "service-worker.js": "/official_portfolio/service-worker.js",
-    "static/css/main.eab24d3c.chunk.css.map": "/official_portfolio/static/css/main.eab24d3c.chunk.css.map",
-    "static/js/2.180d86fb.chunk.js.LICENSE.txt": "/official_portfolio/static/js/2.180d86fb.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/official_portfolio/static/media/logo.5d5d9eef.svg"
+    "static/css/main.a7fa04aa.chunk.css.map": "/official_portfolio/static/css/main.a7fa04aa.chunk.css.map",
+    "static/js/2.3239014c.chunk.js.LICENSE.txt": "/official_portfolio/static/js/2.3239014c.chunk.js.LICENSE.txt",
+    "static/media/ambition.jpg": "/official_portfolio/static/media/ambition.9fe65a99.jpg",
+    "static/media/grow.jpg": "/official_portfolio/static/media/grow.eff52e39.jpg",
+    "static/media/Home.module.css": "/official_portfolio/static/media/home_bgc.21c97ef6.jpg",
+    "static/media/summary.module.css": "/official_portfolio/static/media/infinity.b3ca4798.jpg",
+    "static/media/investment.jpg": "/official_portfolio/static/media/investment.3e6259a0.jpg",
+    "static/media/knowledge.jpg": "/official_portfolio/static/media/knowledge.c37753eb.jpg",
+    "static/media/team_work.jpg": "/official_portfolio/static/media/team_work.8466f46b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.48872efb.js",
-    "static/js/2.180d86fb.chunk.js",
-    "static/css/main.eab24d3c.chunk.css",
-    "static/js/main.a80faab1.chunk.js"
+    "static/js/2.3239014c.chunk.js",
+    "static/css/main.a7fa04aa.chunk.css",
+    "static/js/main.bfe035ab.chunk.js"
   ]
 }
