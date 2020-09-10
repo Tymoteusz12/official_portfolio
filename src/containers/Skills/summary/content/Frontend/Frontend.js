@@ -30,7 +30,7 @@ const Frontend = props => {
             <div className={classes.abilities}>
                 <ul>
                     {abilities.map( ability =>(
-                        <li key={ability}>
+                        <li key={ability.name}>
                             {ability.image !== '' 
                             ? <i className={ability.image}></i>
                             : null}

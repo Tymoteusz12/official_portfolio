@@ -4,9 +4,9 @@ import {NavLink} from 'react-router-dom';
 class Navigation extends Component{
 
     state = {
-        nav_bars_pl: ['Zaczynamy!', 'Umiejętności',  'Kilka słów o mnie', 'Skontaktuj się!'],
-        nav_bars_eng: ['Here we go!', 'My skills', 'Briefly about me', 'Call me!'],
-        paths: ['/Start', '/Skills', '/About', '/Contact']
+        nav_bars_pl: ['Zaczynamy!', 'Umiejętności',  'Zatrudnij :)'],
+        nav_bars_eng: ['Here we go!', 'My skills', 'Hire me :)'],
+        paths: ['/Start', '/Skills', '/Hire']
     }
     render(){
         let navID = 0;

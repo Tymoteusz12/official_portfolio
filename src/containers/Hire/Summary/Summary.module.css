@@ -1,0 +1,54 @@
+.Summary{
+    width: 90%;
+}
+
+.list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.list li{
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.list li img{
+    margin: auto;
+    width: 40%;
+}
+
+.list li p{
+    margin: auto;
+    width: 40%;
+    font-size: 28px;
+    letter-spacing: 1px;
+    line-height: 150%;
+}
+
+.Summary h2{
+    margin: 100px auto;
+    width: 80%;
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.secondList{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.secondList li{
+    margin: auto;
+    text-align: left;
+    padding: 20px 0px;
+    width: 60%;
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 150%;
+}

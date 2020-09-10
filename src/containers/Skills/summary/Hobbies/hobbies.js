@@ -51,7 +51,7 @@ class Hobbies extends Component {
                 </h2>
                 <ul>
                     {this.state.interestsPL.map(interest =>{
-                        return (<li key={interest}>
+                        return (<li key={interest.name}>
                                     <i className={interest.image}></i>
                                     <p><em>{interest.name}</em></p>
                                 </li>)

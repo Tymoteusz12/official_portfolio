@@ -4,6 +4,7 @@ import classes from './App.module.css';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Navigation from './containers/Navigation/Navigation';
 import Skills from './containers/Skills/Skills';
+import Hire from './containers/Hire/Hire';
 class App extends Component {
 
 
@@ -12,6 +13,7 @@ class App extends Component {
       <Switch>
         <Route path='/Start' component={Home}/>
         <Route path='/Skills' component={Skills}/>
+        <Route path='/Hire' component={Hire}/>
         <Redirect from='/' to='/Start'/>
       </Switch>
     )
