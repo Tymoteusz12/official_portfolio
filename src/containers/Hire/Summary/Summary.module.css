@@ -3,10 +3,11 @@
 }
 
 .list{
+    margin: 0 auto;
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 100px 0 100px 0;
 }
 
 .list li{
@@ -14,12 +15,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid black;
 }
 
 .list li img{
     margin: auto;
-    width: 40%;
+    width: 50%;
 }
 
 .list li p{
@@ -30,25 +30,33 @@
     line-height: 150%;
 }
 
-.Summary h2{
-    margin: 100px auto;
-    width: 80%;
-    font-size: 36px;
-    font-weight: normal;
+@media (max-width: 900px){
+    .Summary{
+        width: 100%;
+    }
+    .list{
+        padding: 50px 0;
+    }
+
+    .list li {
+        padding: 50px 0;
+    }
+    .list li p{
+        font-size: 22px;
+    }
 }
 
-.secondList{
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
+@media (max-width: 600px){
+    .list li{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list li img, .list li p{
+        margin: 10px auto;
+        width: 80%;
+    }
 }
 
-.secondList li{
-    margin: auto;
-    text-align: left;
-    padding: 20px 0px;
-    width: 60%;
-    font-size: 24px;
-    letter-spacing: 1px;
-    line-height: 150%;
-}
+
+
