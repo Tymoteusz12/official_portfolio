@@ -3,6 +3,10 @@ import classes from './Skills.module.css';
 import Summary from './summary/summary';
 class Skills extends Component {
 
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
+
     render(){
         return(
             <div className={classes.Skills}>

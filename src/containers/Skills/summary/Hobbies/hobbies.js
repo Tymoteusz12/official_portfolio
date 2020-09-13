@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './hobbies.module.css';
-
+import {textSmoothTransition} from '../../../../shared/transitionClasses';
+import {CSSTransition} from 'react-transition-group';
 class Hobbies extends Component {
 
     state = {
@@ -42,22 +43,52 @@ class Hobbies extends Component {
             image: 'fas fa-dumbbell'},
             {name: 'Track and field',
             image: 'fas fa-running'},
-        ]
+        ],
+        shouldBeVisible : false
     }
+
+    componentDidMount(){
+        window.addEventListener('scroll', this.scrollHandler);
+        this.setState({shouldBeVisible: false});
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.scrollHandler);
+        this.setState({shouldBeVisible: false});
+    }
+
+    scrollHandler = () => {
+        let elem = document.getElementById('hobbies');
+        let domRect = elem.getBoundingClientRect();
+
+        if(domRect.y < window.innerHeight/8){
+            this.setState({shouldBeVisible: true});
+        }
+        else{
+            this.setState({shouldBeVisible: false});
+        }
+    }
+
     render(){
+        let hobbiesToRender = this.state.interestsPL.map(interest =>{
+            return (<li key={interest.name}>
+                        <i className={interest.image}></i>
+                        <p><em>{interest.name}</em></p>
+                    </li>)
+        });
         return (
-            <div className={classes.hobbies}>
-                <h2>{this.state.headerPL} 
-                </h2>
-                <ul>
-                    {this.state.interestsPL.map(interest =>{
-                        return (<li key={interest.name}>
-                                    <i className={interest.image}></i>
-                                    <p><em>{interest.name}</em></p>
-                                </li>)
-                    })}
-                </ul>
-            </div>
+            <CSSTransition 
+                in={this.state.shouldBeVisible}
+                classNames={textSmoothTransition}
+                timeout={0}>
+                <div className={classes.hobbies} id='hobbies'>
+                    <h2>{this.state.headerPL} 
+                    </h2>
+                    <ul>
+                        {hobbiesToRender}
+                    </ul>
+                </div>
+            </CSSTransition>
         );
     };
 

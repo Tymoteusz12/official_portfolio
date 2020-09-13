@@ -3,6 +3,7 @@
     text-align: left;
     width: 80%;
     padding: 20px;
+    opacity: 0;
 }
 
 .wrapper h2, .shortAbout, .intro ul{
@@ -40,6 +41,11 @@
 
 .wrapper ul li{
     margin: 5px 20px;
+}
+
+.animWrapper{
+    position: relative;
+    transform: translateY(0%);
 }
 
 @media (max-width: 800px){

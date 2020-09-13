@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from '../Frontend/Frontend.module.css';
 import classesExtra from './Extra.module.css';
+import { textSmoothTransition } from '../../../../../shared/transitionClasses';
+import {CSSTransition} from 'react-transition-group';
 const Extra = props => {
 
     const [abilities, setAbilities] = useState([
@@ -24,22 +26,53 @@ const Extra = props => {
     const [headerPL] = useState('Posiadam również wiedzę z pokrewnych: ');
     const [headerENG] = useState('Also my skills include: ');
 
+    const [shouldBeVisible, setShouldBeVisible] = useState(false);
+
+    function scrollHandler(){
+        let elem = document.getElementById('extra');
+        let domRect = elem.getBoundingClientRect();
+
+        if(domRect.y < window.innerHeight/8){
+            setShouldBeVisible(true);
+        }
+        else{
+            setShouldBeVisible(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollHandler);
+        setShouldBeVisible(false);
+    }, [])
+
+    useEffect(() => {
+        return () => {
+            window.removeEventListener('scroll', scrollHandler);
+            setShouldBeVisible(false);
+        }
+    }, [])
+
     return(
-        <div className={classesExtra.outside}>
-            <h2>{headerPL}</h2>
-            <div className={classes.abilities}>
-                <ul>
-                    {abilities.map( ability =>(
-                        <li key={ability.name}>
-                            {ability.image !== '' 
-                            ? <i className={ability.image}></i>
-                            : null}
-                            <p><em>{ability.name}</em></p>
-                        </li>
-                    ))}
-                </ul>
+        <CSSTransition 
+            in={shouldBeVisible}
+            classNames={textSmoothTransition}
+            timeout={0}>
+            <div className={classesExtra.outside} id='extra'>
+                <h2>{headerPL}</h2>
+                <div className={classes.abilities}>
+                    <ul>
+                        {abilities.map( ability =>(
+                            <li key={ability.name}>
+                                {ability.image !== '' 
+                                ? <i className={ability.image}></i>
+                                : null}
+                                <p><em>{ability.name}</em></p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
-        </div>
+        </CSSTransition>
     );
 
 }
