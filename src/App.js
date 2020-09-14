@@ -14,8 +14,7 @@ const LazyHire = lazy(() => import('./containers/Hire/Hire'));
 class App extends Component {
 
   state = {
-    preload : false,
-    preloadPointer: LazySkills.preload()
+    preload : false
   }
 
   preloadContainers = () => {
@@ -37,8 +36,8 @@ class App extends Component {
           classNames={pageTransition}
           timeout = {0}>
           <Switch>
-            <Route path='/Start' render={ (props) => <Suspense fallback={<Spinner/>}><LazyStart /></Suspense>}/>
-            <Route path='/Skills' render={ () => <Suspense fallback={<Spinner/>}><LazySkills preloadPointer={this.state.preloadPointer}/></Suspense>}/>
+            <Route path='/Start' render={ (props) => <Suspense fallback={<Spinner/>}><LazyStart {...props} preload={LazySkills.preload}/></Suspense>}/>
+            <Route path='/Skills' render={ () => <Suspense fallback={<Spinner/>}><LazySkills /></Suspense>}/>
             <Route path='/Hire' render={ () => <Suspense fallback={<Spinner/>}><LazyHire/></Suspense>}/>
             <Redirect from='/' to='/Start'/>
           </Switch>
