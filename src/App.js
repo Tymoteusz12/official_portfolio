@@ -7,7 +7,6 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import Spinner from './components/UI/Spinner';
 import { Suspense } from "react";
 import lazy from "react-lazy-with-preload";
-import {isMobile} from 'react-device-detect';
 const LazyStart = lazy(() => import('./containers/Home/Home'));
 const LazySkills = lazy(() => import('./containers/Skills/Skills'));
 const LazyHire = lazy(() => import('./containers/Hire/Hire'));
@@ -15,7 +14,8 @@ const LazyHire = lazy(() => import('./containers/Hire/Hire'));
 class App extends Component {
 
   state = {
-    preload : false
+    preload : false,
+    preloadPointer: LazySkills.preload()
   }
 
   preloadContainers = () => {
@@ -23,15 +23,6 @@ class App extends Component {
       if(this.props.history.location.pathname !== '/Start'){
         LazyStart.preload();
       }
-      LazySkills.preload();
-      LazyHire.preload();
-      this.setState({preload: true});
-    }
-  }
-
-  componentDidMount(){
-    if(isMobile){
-      LazyStart.preload();
       LazySkills.preload();
       LazyHire.preload();
       this.setState({preload: true});
@@ -46,8 +37,8 @@ class App extends Component {
           classNames={pageTransition}
           timeout = {0}>
           <Switch>
-            <Route path='/Start' render={ () => <Suspense fallback={<Spinner/>}><LazyStart/></Suspense>}/>
-            <Route path='/Skills' render={ () => <Suspense fallback={<Spinner/>}><LazySkills/></Suspense>}/>
+            <Route path='/Start' render={ (props) => <Suspense fallback={<Spinner/>}><LazyStart /></Suspense>}/>
+            <Route path='/Skills' render={ () => <Suspense fallback={<Spinner/>}><LazySkills preloadPointer={this.state.preloadPointer}/></Suspense>}/>
             <Route path='/Hire' render={ () => <Suspense fallback={<Spinner/>}><LazyHire/></Suspense>}/>
             <Redirect from='/' to='/Start'/>
           </Switch>

@@ -16,6 +16,7 @@ class Home extends Component {
     }
 
     clickHandler = () => {
+        this.props.preloadPointer();
         this.props.history.push('/Skills');
     }
 
@@ -59,7 +60,8 @@ class Home extends Component {
                                 ? this.state.skillsPL
                                 : this.state.skillsENG}
                             </p>
-                            <div className={classes.stayButton} onClick={this.clickHandler}>
+                            <div className={classes.stayButton} 
+                                onClick={this.clickHandler}>
                                 <p>
                                     {this.props.language === 'PL' 
                                     ? this.state.skillsLabelPL
