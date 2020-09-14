@@ -14,7 +14,7 @@ class Navigation extends Component{
         let navID = 0;
         return(
             <div className={classes.list} onMouseOver={this.props.onMouseOver}>
-                    {this.props.lang === 'PL' 
+                    {this.props.language === 'PL' 
                     ? this.state.nav_bars_pl.map(path => {
                         return (
                             <NavLink 
@@ -41,6 +41,13 @@ class Navigation extends Component{
             </div>
         );
     };
+}
+
+const mapStateToProps = state => {
+    return {
+        language : state.UIReducer.language,
+        theme : state.UIReducer.theme
+    }
 }
 
 export default withRouter(Navigation);
