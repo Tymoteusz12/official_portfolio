@@ -7,7 +7,7 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import Spinner from './components/UI/Spinner';
 import { Suspense } from "react";
 import lazy from "react-lazy-with-preload";
-
+import {isMobile} from 'react-device-detect';
 const LazyStart = lazy(() => import('./containers/Home/Home'));
 const LazySkills = lazy(() => import('./containers/Skills/Skills'));
 const LazyHire = lazy(() => import('./containers/Hire/Hire'));
@@ -25,7 +25,16 @@ class App extends Component {
       }
       LazySkills.preload();
       LazyHire.preload();
-      this.setState({preload: false});
+      this.setState({preload: true});
+    }
+  }
+
+  componentDidMount(){
+    if(isMobile){
+      LazyStart.preload();
+      LazySkills.preload();
+      LazyHire.preload();
+      this.setState({preload: true});
     }
   }
   
@@ -45,7 +54,7 @@ class App extends Component {
         </CSSTransition>
       </TransitionGroup>
     )
-    
+
     return (
       <div className={classes.App}>
         <Navigation lang={'PL'} onMouseOver={this.preloadContainers}/>
