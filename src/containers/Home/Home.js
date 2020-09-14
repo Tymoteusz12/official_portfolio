@@ -16,7 +16,6 @@ class Home extends Component {
     }
 
     clickHandler = () => {
-        this.props.preload();
         this.props.history.push('/Skills');
     }
 

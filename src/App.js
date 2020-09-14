@@ -27,6 +27,10 @@ class App extends Component {
       this.setState({preload: true});
     }
   }
+
+  componentDidMount = () => {
+    LazySkills.preload();
+  }
   
   render(){
     let pageToRender = (
@@ -36,7 +40,7 @@ class App extends Component {
           classNames={pageTransition}
           timeout = {0}>
           <Switch>
-            <Route path='/Start' render={ (props) => <Suspense fallback={<Spinner/>}><LazyStart {...props} preload={LazySkills.preload}/></Suspense>}/>
+            <Route path='/Start' render={ () => <Suspense fallback={<Spinner/>}><LazyStart /></Suspense>}/>
             <Route path='/Skills' render={ () => <Suspense fallback={<Spinner/>}><LazySkills /></Suspense>}/>
             <Route path='/Hire' render={ () => <Suspense fallback={<Spinner/>}><LazyHire/></Suspense>}/>
             <Redirect from='/' to='/Start'/>
