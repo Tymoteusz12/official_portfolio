@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/official_portfolio/static/css/main.77f3136a.chunk.css",
-    "main.js": "/official_portfolio/static/js/main.2dfa176f.chunk.js",
-    "main.js.map": "/official_portfolio/static/js/main.2dfa176f.chunk.js.map",
+    "main.css": "/official_portfolio/static/css/main.72e241a2.chunk.css",
+    "main.js": "/official_portfolio/static/js/main.08cbd3cf.chunk.js",
+    "main.js.map": "/official_portfolio/static/js/main.08cbd3cf.chunk.js.map",
     "runtime-main.js": "/official_portfolio/static/js/runtime-main.48872efb.js",
     "runtime-main.js.map": "/official_portfolio/static/js/runtime-main.48872efb.js.map",
-    "static/js/2.3a97f629.chunk.js": "/official_portfolio/static/js/2.3a97f629.chunk.js",
-    "static/js/2.3a97f629.chunk.js.map": "/official_portfolio/static/js/2.3a97f629.chunk.js.map",
+    "static/js/2.d194d0a8.chunk.js": "/official_portfolio/static/js/2.d194d0a8.chunk.js",
+    "static/js/2.d194d0a8.chunk.js.map": "/official_portfolio/static/js/2.d194d0a8.chunk.js.map",
     "index.html": "/official_portfolio/index.html",
-    "precache-manifest.894847a0cc3c09958db4265c2f15fab6.js": "/official_portfolio/precache-manifest.894847a0cc3c09958db4265c2f15fab6.js",
+    "precache-manifest.b8d057d771e5713a0f8f3d36d870e05e.js": "/official_portfolio/precache-manifest.b8d057d771e5713a0f8f3d36d870e05e.js",
     "service-worker.js": "/official_portfolio/service-worker.js",
-    "static/css/main.77f3136a.chunk.css.map": "/official_portfolio/static/css/main.77f3136a.chunk.css.map",
-    "static/js/2.3a97f629.chunk.js.LICENSE.txt": "/official_portfolio/static/js/2.3a97f629.chunk.js.LICENSE.txt",
+    "static/css/main.72e241a2.chunk.css.map": "/official_portfolio/static/css/main.72e241a2.chunk.css.map",
+    "static/js/2.d194d0a8.chunk.js.LICENSE.txt": "/official_portfolio/static/js/2.d194d0a8.chunk.js.LICENSE.txt",
     "static/media/ambition.jpg": "/official_portfolio/static/media/ambition.9fe65a99.jpg",
     "static/media/grow.jpg": "/official_portfolio/static/media/grow.eff52e39.jpg",
     "static/media/Home.module.css": "/official_portfolio/static/media/home_bgc.21c97ef6.jpg",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.48872efb.js",
-    "static/js/2.3a97f629.chunk.js",
-    "static/css/main.77f3136a.chunk.css",
-    "static/js/main.2dfa176f.chunk.js"
+    "static/js/2.d194d0a8.chunk.js",
+    "static/css/main.72e241a2.chunk.css",
+    "static/js/main.08cbd3cf.chunk.js"
   ]
 }
