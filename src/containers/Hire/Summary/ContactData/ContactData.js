@@ -11,6 +11,14 @@ const Contact = props => {
         data: '+48 735 409 012'},
         {content: 'E-mail',
         data: 'tymoteusz.jagiello@interia.pl'},
+        {content: 'Konto Github',
+        data: 'https://github.com/Tymoteusz12'}]);
+
+    const [listENG] = useState([
+        {content:'Phone number ',
+        data: '+48 735 409 012'},
+        {content: 'E-mail',
+        data: 'tymoteusz.jagiello@interia.pl'},
         {content: 'Github account',
         data: 'https://github.com/Tymoteusz12'}])
 
@@ -47,20 +55,38 @@ const Contact = props => {
             timeout={0}>
             <div className={classes.Contact} id='hire'>
                 <h2>
-                    {headerPL}
+                    {props.language === 'PL'
+                    ? headerPL
+                    : headerENG}
                 </h2>
                 <ul>
-                    {listPL.map(detail => {
-                        return (
-                        <li key={detail.data}>
-                            <p>{detail.content}</p>
-                            <p className={classes.data}>{detail.data}</p>
-                        </li>);
-                    })}
+                    {props.language === 'PL' 
+                        ? listPL.map(detail => {
+                            return (
+                            <li key={detail.data}>
+                                <p>{detail.content}</p>
+                                <p className={classes.data}>{detail.data}</p>
+                            </li>);
+                        })
+                        : listENG.map(detail => {
+                            return (
+                            <li key={detail.data}>
+                                <p>{detail.content}</p>
+                                <p className={classes.data}>{detail.data}</p>
+                            </li>)
+                        })
+                    }
                 </ul>
             </div>
         </CSSTransition>
     );
+}
+
+const mapStateToProps = state => {
+    return {
+        language : state.UIReducer.language,
+        theme : state.UIReducer.theme
+    }
 }
 
 export default Contact;

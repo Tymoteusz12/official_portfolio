@@ -1,15 +1,17 @@
 import React from 'react';
-import classes from './content.module.css';
-import Intro from '../../../../components/intro/intro';
+import Intro from './intro/intro';
 import Frontend from './Frontend/Frontend';
 import Extra from './Extra/Extra';
- const Content = props => {
+import Hobbies from './Hobbies/hobbies';
+
+const Content = props => {
 
     return(
-        <div className={classes.content}>
+        <div>
             <Intro />   
             <Frontend/>
             <Extra />
+            <Hobbies/>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classes from './projects.module.css';
 import {CSSTransition} from 'react-transition-group';
-import {textSmoothTransition} from '../../../shared/transitionClasses';
+import {textSmoothTransition} from '../../../../../../shared/transitionClasses';
 import { Link } from 'react-scroll';
 const Proj = props => {
 
@@ -9,6 +9,8 @@ const Proj = props => {
     const [headerENG] = useState('I created special website, where I put my personal projects. You are welcomed there.')
     const [labelPL] = useState('Sprawdź projekty');
     const [labelENG] = useState('Check projects');
+    const [stayPL] = useState('Przejdź dalej');
+    const [stayENG] = useState('Go forward');
 
     const [shouldBeVisible, setShouldBeVisible] = useState(false);
 
@@ -43,21 +45,42 @@ const Proj = props => {
             classNames = {textSmoothTransition}
             timeout = {0}>
             <div className={classes.Proj} id='ProjectComp'>
-                <h3>{headerPL}</h3>
+                <h3>
+                    {props.language === 'PL'
+                    ? headerPL
+                    : headerENG}</h3>
                 <div className={classes.buttonWrapper}>
-                    <div className={classes.projectsButton}><a href={'https://tymoteusz12.github.io/Projects_web'} target='blank'><p>{labelPL}</p></a></div>
+                    <div className={classes.projectsButton}><a href={'https://tymoteusz12.github.io/Projects_web'} target='blank'>
+                            <p>
+                                {props.language === 'PL'
+                                ? labelPL
+                                : labelENG }
+                            </p>
+                        </a>
+                    </div>
                     <Link 
                         className={classes.goForward}
                         to={'skills'} 
                         smooth={true} 
                         spy={true}
                         duration={600}>
-                            <p>Przejdź dalej</p>
+                            <p>
+                                {props.language === 'PL'
+                                ? stayPL
+                                : stayENG}
+                            </p>
                     </Link>
                 </div>
             </div>
         </CSSTransition>
     );
+}
+
+const mapStateToProps = state => {
+    return {
+        language : state.UIReducer.language,
+        theme : state.UIReducer.theme
+    }
 }
 
 export default Proj;

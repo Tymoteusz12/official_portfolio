@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import classes from './Frontend.module.css';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import {CSSTransition} from 'react-transition-group';
 import { textSmoothTransition } from '../../../../../shared/transitionClasses';
+import {handleScroll} from '../../../../../shared/animationsToggle/scrollHandler';
+
 const Frontend = props => {
 
-    const [abilities, setAbilities] = useState([
+    const [abilities] = useState([
         {name: 'JavaScript',
         image: 'fab fa-js'}, 
         {name: 'React',
@@ -22,21 +24,13 @@ const Frontend = props => {
         {name:'CSS3',
         image: 'fab fa-css3'}]);
 
-    const [headerPL] = useState('Tworząc strony internetowe korzystam z:');
-    const [headerENG] = useState('For web development I use: ');
+    const [headerPL] = useState('Tworząc strony internetowe korzystam z ');
+    const [headerENG] = useState('For web development I use ');
 
     const [shouldBeVisible, setShouldBeVisible] = useState(false);
 
     function scrollHandler(){
-        let elem = document.getElementById('skills');
-        let domRect = elem.getBoundingClientRect();
-
-        if(domRect.y < window.innerHeight/8){
-            setShouldBeVisible(true);
-        }
-        else{
-            setShouldBeVisible(false);
-        }
+        setShouldBeVisible(handleScroll('skills', 8));
     }
 
     useEffect(() => {
@@ -66,7 +60,11 @@ const Frontend = props => {
             classNames={textSmoothTransition}
             timeout={0}>
             <div className={classes.wrapper} id={'skills'}>
-                <h2>{headerPL}</h2>
+                <h2>
+                    {props.language === 'PL'
+                    ? headerPL
+                    : headerENG}
+                </h2>
                 <div className={classes.abilities}>
                         <ul>
                             {skillsToRender}
@@ -75,7 +73,13 @@ const Frontend = props => {
             </div>
         </CSSTransition>
     );
+}
 
+const mapStateToProps = state => {
+    return {
+        language : state.UIReducer.language,
+        theme : state.UIReducer.theme
+    }
 }
 
 export  default Frontend;

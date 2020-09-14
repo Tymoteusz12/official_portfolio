@@ -65,7 +65,13 @@ class Summary extends Component{
         for(let i = 0; i < this.state.identificators.length; i++){
             let elem = document.getElementById(this.state.identificators[i]);
             let domRect = elem.getBoundingClientRect();
-            let hireReasonsCopy = {...this.state.hireReasonsPL};
+            let hireReasonsCopy = 0;
+            if(this.props.language === 'PL'){
+                hireReasonsCopy = {...this.state.hireReasonsPL};
+            }
+            else{
+                hireReasonsCopy = {...this.state.hireReasonsENG}
+            }
 
             if(domRect.y < window.innerHeight/2){
                 hireReasonsCopy[i].visible = true;
@@ -83,7 +89,13 @@ class Summary extends Component{
     }
 
     componentDidMount(){
-        let hireReasonsCopy = {...this.state.hireReasonsPL};
+        let hireReasonsCopy = 0;
+        if(this.props.language === 'PL'){
+            hireReasonsCopy = {...this.state.hireReasonsPL};
+        }
+        else{
+            hireReasonsCopy = {...this.state.hireReasonsENG}
+        }
         hireReasonsCopy[0].visible = true;
 
         window.addEventListener('scroll', this.scrollHandler);
@@ -96,20 +108,37 @@ class Summary extends Component{
     }
 
     render(){
-        let reasonsToRender = this.state.hireReasonsPL.map(reason => (
-            <CSSTransition 
-                key={reason.id}
-                in={reason.visible}
-                classNames = {imgSmoothTransition}
-                timeout = {0}>
-                <li id={reason.id}>
-                    <p>{reason.content}</p>
-                    <img src={reason.image} alt={reason.content}/>
-                </li>
-            </CSSTransition>
+        let reasonsToRender;
+        if(this.props.language === 'PL'){
+            reasonsToRender = this.state.hireReasonsPL.map(reason => {
+                return (<CSSTransition 
+                    key={reason.id}
+                    in={reason.visible}
+                    classNames = {imgSmoothTransition}
+                    timeout = {0}>
+                    <li id={reason.id}>
+                        <p>{reason.content}</p>
+                        <img src={reason.image} alt={reason.content}/>
+                    </li>
+                </CSSTransition>)
+                }
             )
-        )
-
+        }
+        else{
+            reasonsToRender = this.state.hireReasonsENG.map(reason => (
+                <CSSTransition 
+                    key={reason.id}
+                    in={reason.visible}
+                    classNames = {imgSmoothTransition}
+                    timeout = {0}>
+                    <li id={reason.id}>
+                        <p>{reason.content}</p>
+                        <img src={reason.image} alt={reason.content}/>
+                    </li>
+                </CSSTransition>
+                )
+            )
+        }
         return(
             <div className={classes.Summary + ' ' + classesLocal.Summary}>
                 <Link 
@@ -118,8 +147,11 @@ class Summary extends Component{
                     smooth={true} 
                     spy={true}
                     duration={600}>
-                        <p>{this.state.goToENG}</p>
-                        <i class="fas fa-mouse-pointer"></i>
+                        <p>
+                            {this.props.language === 'PL' 
+                            ? this.state.goToPL
+                            : this.state.goToENG}</p>
+                        <i className="fas fa-mouse-pointer"></i>
                 </Link>
                 <ul className={classesLocal.list}>
                     {reasonsToRender}
@@ -127,6 +159,13 @@ class Summary extends Component{
                 <ContactData/>
             </div>
         );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        language : state.UIReducer.language,
+        theme : state.UIReducer.theme
     }
 }
 

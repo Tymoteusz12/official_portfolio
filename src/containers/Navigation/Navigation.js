@@ -9,10 +9,11 @@ class Navigation extends Component{
         paths: ['/Start', '/Skills', '/Hire']
     }
 
+
     render(){
         let navID = 0;
         return(
-            <div className={classes.list}>
+            <div className={classes.list} onMouseOver={this.props.onMouseOver}>
                     {this.props.lang === 'PL' 
                     ? this.state.nav_bars_pl.map(path => {
                         return (

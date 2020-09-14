@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import classes from './hobbies.module.css';
-import {textSmoothTransition} from '../../../../shared/transitionClasses';
+import {textSmoothTransition} from '../../../../../shared/transitionClasses';
 import {CSSTransition} from 'react-transition-group';
+import {handleScroll} from '../../../../../shared/animationsToggle/scrollHandler';
 class Hobbies extends Component {
 
     state = {
-        headerPL: 'Nie licząc tworzenia stron internetowych, moje zainteresowania obejmują również:',
-        headerENG: 'Except of web development, my interests include: ',
+        headerPL: 'Nie licząc tworzenia stron internetowych, moje zainteresowania obejmują również ',
+        headerENG: 'Except of web development I am interested in ',
         interestsPL: [
             {name: 'Astronomia i astrofizyka',
             image: 'fas fa-star'},
@@ -58,31 +59,38 @@ class Hobbies extends Component {
     }
 
     scrollHandler = () => {
-        let elem = document.getElementById('hobbies');
-        let domRect = elem.getBoundingClientRect();
-
-        if(domRect.y < window.innerHeight/12){
-            this.setState({shouldBeVisible: true});
-        }
-        else{
-            this.setState({shouldBeVisible: false});
-        }
+        let toggleVisibility = handleScroll('hobbies', 12);
+        this.setState({shouldBeVisible: toggleVisibility})
     }
 
     render(){
-        let hobbiesToRender = this.state.interestsPL.map(interest =>{
-            return (<li key={interest.name}>
-                        <i className={interest.image}></i>
-                        <p><em>{interest.name}</em></p>
-                    </li>)
-        });
+        let hobbiesToRender = [];
+        if(this.props.language === 'PL'){
+            hobbiesToRender = this.state.interestsPL.map(interest =>{
+                return  (<li key={interest.name}>
+                            <i className={interest.image}></i>
+                            <p><em>{interest.name}</em></p>
+                        </li>)
+            })
+        }
+        else{
+            hobbiesToRender = this.state.interestsENG.map(interest =>{
+                return  (<li key={interest.name}>
+                            <i className={interest.image}></i>
+                            <p><em>{interest.name}</em></p>
+                        </li>)
+        })
+    }
         return (
             <CSSTransition 
                 in={this.state.shouldBeVisible}
                 classNames={textSmoothTransition}
                 timeout={0}>
                 <div className={classes.hobbies} id='hobbies'>
-                    <h2>{this.state.headerPL} 
+                    <h2>
+                        {this.props.language === 'PL'
+                        ? this.state.headerPL
+                        : this.state.headerENG} 
                     </h2>
                     <ul>
                         {hobbiesToRender}
@@ -92,6 +100,13 @@ class Hobbies extends Component {
         );
     };
 
+}
+
+const mapStateToProps = state => {
+    return {
+        language : state.UIReducer.language,
+        theme : state.UIReducer.theme
+    }
 }
 
 export default Hobbies;

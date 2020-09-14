@@ -3,10 +3,7 @@ import classes from './Hire.module.css'
 import Summary from './Summary/Summary';
 
 class Hire extends Component{
-    state = {
-
-    }
-
+    
     render(){
         return(
             <div className={classes.Hire}>

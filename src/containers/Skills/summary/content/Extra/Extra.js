@@ -3,6 +3,8 @@ import classes from '../Frontend/Frontend.module.css';
 import classesExtra from './Extra.module.css';
 import { textSmoothTransition } from '../../../../../shared/transitionClasses';
 import {CSSTransition} from 'react-transition-group';
+import { handleScroll } from '../../../../../shared/animationsToggle/scrollHandler';
+
 const Extra = props => {
 
     const [abilities] = useState([
@@ -23,21 +25,13 @@ const Extra = props => {
         {name: 'Python',
         image: 'fab fa-python'}]);
 
-    const [headerPL] = useState('Posiadam również wiedzę z pokrewnych: ');
-    const [headerENG] = useState('Also my skills include: ');
+    const [headerPL] = useState('Posiadam również wiedzę z pokrewnych ');
+    const [headerENG] = useState('Also my skills include ');
 
     const [shouldBeVisible, setShouldBeVisible] = useState(false);
 
     function scrollHandler(){
-        let elem = document.getElementById('extra');
-        let domRect = elem.getBoundingClientRect();
-
-        if(domRect.y < window.innerHeight/8){
-            setShouldBeVisible(true);
-        }
-        else{
-            setShouldBeVisible(false);
-        }
+        setShouldBeVisible(handleScroll('extra', 8));
     }
 
     useEffect(() => {
@@ -58,7 +52,11 @@ const Extra = props => {
             classNames={textSmoothTransition}
             timeout={0}>
             <div className={classesExtra.outside} id='extra'>
-                <h2>{headerPL}</h2>
+                <h2>
+                    {props.language === 'PL'
+                    ? headerPL
+                    : headerENG}
+                </h2>
                 <div className={classes.abilities}>
                     <ul>
                         {abilities.map( ability =>(
@@ -74,7 +72,13 @@ const Extra = props => {
             </div>
         </CSSTransition>
     );
+}
 
+const mapStateToProps = state => {
+    return {
+        language : state.UIReducer.language,
+        theme : state.UIReducer.theme
+    }
 }
 
 export  default Extra;

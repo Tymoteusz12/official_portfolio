@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import classes from './intro.module.css';
 import Projects from './Projects/projects';
 import {CSSTransition} from 'react-transition-group';
-import {textSmoothTransition} from '../../shared/transitionClasses';
+import {textSmoothTransition} from '../../../../../shared/transitionClasses';
+import {handleScroll} from '../../../../../shared/animationsToggle/scrollHandler';
 
 const Intro = props => {
 
@@ -13,9 +14,9 @@ const Intro = props => {
         'Programista'
     ]);
     const [titlesENG] = useState([
-        'Pasjonat nowoczesnych technologii',
+        'Modern technology passionate',
         'Front-end developer to be',
-        'Miłośnik astronomii i fizyki',
+        'Physics and astronomy lover',
         'Programmer'
     ]);
     const [shortAboutPL] = useState(
@@ -28,15 +29,7 @@ const Intro = props => {
     const [introState, setIntroState] = useState();
 
     function scrollHandler(){
-        let elem = document.getElementById('intro');
-        let domRect = elem.getBoundingClientRect();
-
-        if(domRect.y < window.innerHeight / 4){
-            setIntroState(true);
-        }
-        else{
-            setIntroState(false);
-        }
+        setIntroState(handleScroll('intro', 4));
     }
     
     useEffect(() => {
@@ -57,11 +50,17 @@ const Intro = props => {
             <CSSTransition 
                 in = {componentMount}
                 classNames = {textSmoothTransition}
-                timeout = {{enter: 600, exit: 0}}>
+                timeout = {{enter: 300, exit: 0}}>
                 <div className={classes.animWrapper} id={'intro'}>
                     <h2>Tymoteusz Jagiełło</h2>
                     <ul>
-                        {titlesPL.map(title => {
+                        {props.language === 'PL' 
+                        ? titlesPL.map(title => {
+                            return (
+                                <li key={title}>{title}</li>
+                            )
+                        })
+                        : titlesENG.map(title => {
                             return (
                                 <li key={title}>{title}</li>
                             )
@@ -75,7 +74,9 @@ const Intro = props => {
                 timeout = {0}>
                 <article className={classes.intro}>
                     <p className={classes.shortAbout}>
-                        {shortAboutPL}
+                        {props.language === 'PL'
+                        ? shortAboutPL
+                        : shortAboutENG}
                     </p>
                 </article>
             </CSSTransition> 
@@ -83,5 +84,12 @@ const Intro = props => {
         </div>
     );
 };
+
+const mapStateToProps = state => {
+    return {
+        language : state.UIReducer.language,
+        theme : state.UIReducer.theme
+    }
+}
 
 export default Intro;
