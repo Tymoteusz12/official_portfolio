@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Navigation.module.css';
-import {NavLink} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 class Navigation extends Component{
 
     state = {
@@ -8,6 +8,7 @@ class Navigation extends Component{
         nav_bars_eng: ['Here we go!', 'My skills', 'Hire me :)'],
         paths: ['/Start', '/Skills', '/Hire']
     }
+
     render(){
         let navID = 0;
         return(
@@ -41,4 +42,4 @@ class Navigation extends Component{
     };
 }
 
-export default Navigation;
+export default withRouter(Navigation);

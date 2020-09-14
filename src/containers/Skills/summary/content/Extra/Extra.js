@@ -5,7 +5,7 @@ import { textSmoothTransition } from '../../../../../shared/transitionClasses';
 import {CSSTransition} from 'react-transition-group';
 const Extra = props => {
 
-    const [abilities, setAbilities] = useState([
+    const [abilities] = useState([
         {name: 'Software architecture',
         image: 'fas fa-recycle'},
         {name: 'DOM/jQuery',

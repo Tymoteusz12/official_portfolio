@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import classes from './projects.module.css';
 import {CSSTransition} from 'react-transition-group';
 import {textSmoothTransition} from '../../../shared/transitionClasses';
-
+import { Link } from 'react-scroll';
 const Proj = props => {
 
     const [headerPL] = useState('Stworzyłem specjalną stronę dla moich projektów. Zachęcam do jej sprawdzenia, gdyż potwierdza moje umiejętności wymienione poniżej.');
@@ -13,11 +13,10 @@ const Proj = props => {
     const [shouldBeVisible, setShouldBeVisible] = useState(false);
 
     function scrollHandler(){
-        let scrollValue = window.scrollY;
         let elem = document.getElementById('ProjectComp');
         let domRect = elem.getBoundingClientRect();
 
-        if(scrollValue > domRect.y + window.innerHeight / 4){
+        if(domRect.y < window.innerHeight / 2){
             setShouldBeVisible(true);
         }
         else{
@@ -47,7 +46,14 @@ const Proj = props => {
                 <h3>{headerPL}</h3>
                 <div className={classes.buttonWrapper}>
                     <div className={classes.projectsButton}><a href={'https://tymoteusz12.github.io/Projects_web'} target='blank'><p>{labelPL}</p></a></div>
-                    <div className={classes.goForward}><p>Przejdz dalej</p></div>
+                    <Link 
+                        className={classes.goForward}
+                        to={'skills'} 
+                        smooth={true} 
+                        spy={true}
+                        duration={600}>
+                            <p>Przejdź dalej</p>
+                    </Link>
                 </div>
             </div>
         </CSSTransition>

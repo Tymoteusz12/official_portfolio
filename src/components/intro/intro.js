@@ -28,9 +28,14 @@ const Intro = props => {
     const [introState, setIntroState] = useState();
 
     function scrollHandler(){
-        let scrollValue = window.scrollY;
-        if(scrollValue > 1){
+        let elem = document.getElementById('intro');
+        let domRect = elem.getBoundingClientRect();
+
+        if(domRect.y < window.innerHeight / 4){
             setIntroState(true);
+        }
+        else{
+            setIntroState(false);
         }
     }
     
@@ -52,8 +57,8 @@ const Intro = props => {
             <CSSTransition 
                 in = {componentMount}
                 classNames = {textSmoothTransition}
-                timeout = {0}>
-                <div className={classes.animWrapper}>
+                timeout = {{enter: 600, exit: 0}}>
+                <div className={classes.animWrapper} id={'intro'}>
                     <h2>Tymoteusz Jagiełło</h2>
                     <ul>
                         {titlesPL.map(title => {
@@ -73,8 +78,7 @@ const Intro = props => {
                         {shortAboutPL}
                     </p>
                 </article>
-            </CSSTransition>
-                
+            </CSSTransition> 
             <Projects/>
         </div>
     );

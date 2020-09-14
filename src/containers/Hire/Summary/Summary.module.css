@@ -11,6 +11,7 @@
 }
 
 .list li{
+    opacity: 0;
     padding: 100px 0px;
     display: flex;
     justify-content: center;
@@ -30,7 +31,33 @@
     line-height: 150%;
 }
 
-@media (max-width: 900px){
+.wrapper{
+    width: 100%;
+}
+
+.goToContact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+    transition: .4s ease;
+    font-size: 24px;
+}
+
+.goToContact p{
+    margin-right: 50px;
+}
+
+.goToContact:hover{
+    background-color: lightgray;
+}
+
+@media (max-width: 1100px){
     .Summary{
         width: 100%;
     }

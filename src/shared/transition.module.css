@@ -1,0 +1,60 @@
+.textToggle-enter{
+    opacity: 0 !important;
+    transform: translateY(10%);
+}
+
+.textToggle-enter-done{
+    transform: translateY(0%);
+    opacity: 1 !important;
+    transition: all 1s ease;
+}
+
+.textToggle-exit{
+    opacity: 0 !important;
+    transition: opacity 1s;
+}
+
+.textToggle-exit-done{
+    opacity: 0 !important; 
+    transition: opacity 1s;
+}
+
+.imgToggle-enter{
+    opacity: 0 !important;
+    transform: translateX(5%);
+}
+
+.imgToggle-enter-done{
+    transform: translateX(0%);
+    opacity: 1 !important;
+    transition: all .6s ease;
+}
+
+.imgToggle-exit{
+    opacity: 0 !important;
+    transition: opacity .6s;
+}
+
+.imgToggle-exit-done{
+    opacity: 0 !important; 
+    transition: opacity .6s;
+}
+
+.page-enter{
+    opacity: 0 !important;
+}
+
+.page-enter-done{
+    opacity: 1 !important;
+    transition: all .6s ease;
+}
+
+.page-exit{
+    opacity: 0 !important;
+    transition: opacity .6s ease;
+}
+
+.page-exit-done{
+    opacity: 0 !important; 
+    transition: opacity .6s ease;
+}

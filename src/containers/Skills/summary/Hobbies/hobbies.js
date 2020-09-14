@@ -8,9 +8,9 @@ class Hobbies extends Component {
         headerPL: 'Nie licząc tworzenia stron internetowych, moje zainteresowania obejmują również:',
         headerENG: 'Except of web development, my interests include: ',
         interestsPL: [
-            {name: 'Astronomia',
+            {name: 'Astronomia i astrofizyka',
             image: 'fas fa-star'},
-            {name: 'Fizyka',
+            {name: 'Fizyka cząstek elementarnych',
             image: 'fas fa-atom'},
             {name: 'Matematyka',
             image: 'fas fa-infinity'},
@@ -27,9 +27,9 @@ class Hobbies extends Component {
              
         ],
         interestsENG: [
-            {name: 'Astronomy',
+            {name: 'Astronomy and astrophysics',
             image: 'fas fa-star'},
-            {name: 'Physics',
+            {name: 'Nuclear and particle physics',
             image: 'fas fa-atom'},
             {name: 'Math',
             image: 'fas fa-infinity'},
@@ -61,7 +61,7 @@ class Hobbies extends Component {
         let elem = document.getElementById('hobbies');
         let domRect = elem.getBoundingClientRect();
 
-        if(domRect.y < window.innerHeight/8){
+        if(domRect.y < window.innerHeight/12){
             this.setState({shouldBeVisible: true});
         }
         else{

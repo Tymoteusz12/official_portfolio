@@ -39,11 +39,13 @@
     }
 
     .hobbies h2{
+        font-size: 28px;
         margin: auto;
         width: 90%;
     }
 
     .hobbies ul li{
-        padding: 12px;
+        font-size: 18px;
+        padding: 8px;
     }
 }

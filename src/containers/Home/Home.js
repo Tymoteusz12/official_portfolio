@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classes from './Home.module.css';
 import {withRouter} from 'react-router-dom';
+import {CSSTransition} from 'react-transition-group';
+import {textSmoothTransition, imgSmoothTransition} from '../../shared/transitionClasses';
 class Home extends Component {
 
     state = {
@@ -10,25 +12,50 @@ class Home extends Component {
         skillENG: 'find outwhy I am worth hiring',
         skillsLabelPL: 'Umiejętności',
         skillsLabelENG: 'Abilities',
+        componentMount: false
     }
 
     clickHandler = () => {
         this.props.history.push('/Skills');
     }
 
+    componentDidMount(){
+        this.setState({componentMount: true})
+    }
+
+    componentWillUnmount(){
+        this.setState({componentMount: false})
+    }
+
     render(){
         return(
             <div className={classes.Home}>
-                <h2>Front-end/React developer</h2>
-                <div className={classes.paragraph}>
-                    <p>{this.state.meetingPL}</p>
+                <CSSTransition 
+                    in = {this.state.componentMount}
+                    classNames={textSmoothTransition}
+                    timeout = {{enter: 400, exit: 0}}>
+                    <h2>Front-end/React developer</h2>
+                </CSSTransition>
+                <CSSTransition 
+                    in = {this.state.componentMount}
+                    classNames={imgSmoothTransition}
+                    timeout = {{enter: 1000, exit: 0}}>
+                    <div className={classes.paragraph}>
+                        <p>{this.state.meetingPL}</p>
                     </div>
-                <div className={classes.general}>
-                    <div className={classes.select}>
-                        <p>{this.state.skillsPL}</p>
-                        <div className={classes.stayButton} onClick={this.clickHandler}><p>{this.state.skillsLabelPL}</p></div>
+                </CSSTransition>
+                <CSSTransition 
+                    in = {this.state.componentMount}
+                    classNames={imgSmoothTransition}
+                    timeout = {{enter: 1600, exit: 0}}>
+                    <div className={classes.general}>
+                        <div className={classes.select}>
+                            <p>{this.state.skillsPL}</p>
+                            <div className={classes.stayButton} onClick={this.clickHandler}><p>{this.state.skillsLabelPL}</p></div>
+                        </div>
                     </div>
-                </div>
+                 </CSSTransition>
+                
             </div>
             
         );

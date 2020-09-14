@@ -1,8 +1,6 @@
 .Proj{
     margin-top: 50px;
-    position: relative;
     opacity: 0;
-    transform: translateY(0%);
 }
 .Proj h3{
     font-weight: normal;
