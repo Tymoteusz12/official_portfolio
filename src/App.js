@@ -43,7 +43,7 @@ class App extends Component {
             <Route path={'/official_portfolio' + '/Start'} render={ () => <Suspense fallback={<Spinner/>}><LazyStart /></Suspense>}/>
             <Route path={'/official_portfolio' + '/Skills'} render={ () => <Suspense fallback={<Spinner/>}><LazySkills /></Suspense>}/>
             <Route path={'/official_portfolio' + '/Start'} render={ () => <Suspense fallback={<Spinner/>}><LazyHire/></Suspense>}/>
-            <Redirect from='/' to={'official_portfolio'}/>
+            <Redirect from='/' to={'official_portfolio' + '/Start'}/>
           </Switch>
         </CSSTransition>
       </TransitionGroup>
