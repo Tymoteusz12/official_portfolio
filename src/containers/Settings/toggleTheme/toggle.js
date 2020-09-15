@@ -22,8 +22,8 @@ const Toggle = props => {
                 classNames={buttonChanger}
                 timeout={{enter: 0, exit: 0}}>
                     <div className={classes.toggler} onClick={onClickHandler}>
-                        <i className={classes.sun + ' ' + "fas fa-sun"}></i>
-                        <i className={classes.moon + ' ' + "far fa-moon"}></i>
+                        <i className={classes.sun + ' fas fa-sun'}></i>
+                        <i className={classes.moon + ' far fa-moon'}></i>
                     </div>
             </CSSTransition>
         </div>

@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     language: 'ENG',
-    theme: 'LIGHT'
+    theme: false
 }
 
 const changeLanguage = (state, action) => {
@@ -15,7 +15,7 @@ const changeLanguage = (state, action) => {
 const changeTheme = (state, action) => {
     return {
         ...state,
-        theme: action.theme
+        theme: !state.theme
     }
 }
 
