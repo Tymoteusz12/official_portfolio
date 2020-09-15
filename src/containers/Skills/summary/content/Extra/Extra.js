@@ -4,6 +4,7 @@ import classesExtra from './Extra.module.css';
 import { textSmoothTransition } from '../../../../../shared/transitionClasses';
 import {CSSTransition} from 'react-transition-group';
 import { handleScroll } from '../../../../../shared/animationsToggle/scrollHandler';
+import {connect} from 'react-redux';
 
 const Extra = props => {
 
@@ -76,9 +77,9 @@ const Extra = props => {
 
 const mapStateToProps = state => {
     return {
-        language : state.UIReducer.language,
-        theme : state.UIReducer.theme
+        language : state.language,
+        theme : state.theme
     }
 }
 
-export  default Extra;
+export default connect(mapStateToProps)(Extra);

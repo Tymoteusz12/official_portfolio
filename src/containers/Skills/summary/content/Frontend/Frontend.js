@@ -3,6 +3,7 @@ import classes from './Frontend.module.css';
 import {CSSTransition} from 'react-transition-group';
 import { textSmoothTransition } from '../../../../../shared/transitionClasses';
 import {handleScroll} from '../../../../../shared/animationsToggle/scrollHandler';
+import {connect} from 'react-redux';
 
 const Frontend = props => {
 
@@ -77,9 +78,9 @@ const Frontend = props => {
 
 const mapStateToProps = state => {
     return {
-        language : state.UIReducer.language,
-        theme : state.UIReducer.theme
+        language : state.language,
+        theme : state.theme
     }
 }
 
-export  default Frontend;
+export default connect(mapStateToProps)(Frontend);

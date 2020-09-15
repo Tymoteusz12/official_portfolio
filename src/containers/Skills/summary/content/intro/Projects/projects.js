@@ -3,6 +3,7 @@ import classes from './projects.module.css';
 import {CSSTransition} from 'react-transition-group';
 import {textSmoothTransition} from '../../../../../../shared/transitionClasses';
 import { Link } from 'react-scroll';
+import {connect} from 'react-redux';
 const Proj = props => {
 
     const [headerPL] = useState('Stworzyłem specjalną stronę dla moich projektów. Zachęcam do jej sprawdzenia, gdyż potwierdza moje umiejętności wymienione poniżej.');
@@ -78,9 +79,9 @@ const Proj = props => {
 
 const mapStateToProps = state => {
     return {
-        language : state.UIReducer.language,
-        theme : state.UIReducer.theme
+        language : state.language,
+        theme : state.theme
     }
 }
 
-export default Proj;
+export default connect(mapStateToProps)(Proj);

@@ -1,14 +1,14 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    lang: 'ENG',
+    language: 'ENG',
     theme: 'LIGHT'
 }
 
 const changeLanguage = (state, action) => {
     return {
         ...state,
-        lang: action.lang
+        language: action.language
     }
 }
 

@@ -1,0 +1,23 @@
+.toggleWrapper{
+    padding: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    width: 20%;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.toggleWrapper p{
+    margin: 0 15px;
+    color: white;
+}
+
+.toggleWrapper p:hover{
+    cursor:pointer;
+}
+
+.active{
+    text-decoration: underline;
+}

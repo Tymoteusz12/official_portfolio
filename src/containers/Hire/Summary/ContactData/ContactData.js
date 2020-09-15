@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import classes from './ContactData.module.css';
 import {CSSTransition} from 'react-transition-group';
 import {textSmoothTransition} from '../../../../shared/transitionClasses';
+import {connect} from 'react-redux';
 const Contact = props => {
 
     const [headerPL] = useState('Odezwij się! :) ')
@@ -84,9 +85,9 @@ const Contact = props => {
 
 const mapStateToProps = state => {
     return {
-        language : state.UIReducer.language,
-        theme : state.UIReducer.theme
+        language : state.language,
+        theme : state.theme
     }
 }
 
-export default Contact;
+export default connect(mapStateToProps)(Contact);

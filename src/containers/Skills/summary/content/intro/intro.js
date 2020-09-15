@@ -4,7 +4,7 @@ import Projects from './Projects/projects';
 import {CSSTransition} from 'react-transition-group';
 import {textSmoothTransition} from '../../../../../shared/transitionClasses';
 import {handleScroll} from '../../../../../shared/animationsToggle/scrollHandler';
-
+import {connect} from 'react-redux';
 const Intro = props => {
 
     const [titlesPL] = useState([
@@ -87,9 +87,9 @@ const Intro = props => {
 
 const mapStateToProps = state => {
     return {
-        language : state.UIReducer.language,
-        theme : state.UIReducer.theme
+        language : state.language,
+        theme : state.theme
     }
 }
 
-export default Intro;
+export default connect(mapStateToProps)(Intro);

@@ -8,14 +8,9 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import UIReducer from './store/reducers/UI';
 import thunk from 'redux-thunk';
-
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__  : null || compose;
 
-const rootReducer = combineReducers({
-  UIReducer: UIReducer
-})
-
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(UIReducer);
 
 const app = (
   <Provider store={store}>

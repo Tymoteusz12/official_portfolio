@@ -3,6 +3,7 @@ import classes from './hobbies.module.css';
 import {textSmoothTransition} from '../../../../../shared/transitionClasses';
 import {CSSTransition} from 'react-transition-group';
 import {handleScroll} from '../../../../../shared/animationsToggle/scrollHandler';
+import {connect} from 'react-redux';
 class Hobbies extends Component {
 
     state = {
@@ -104,9 +105,9 @@ class Hobbies extends Component {
 
 const mapStateToProps = state => {
     return {
-        language : state.UIReducer.language,
-        theme : state.UIReducer.theme
+        language : state.language,
+        theme : state.theme
     }
 }
 
-export default Hobbies;
+export default connect(mapStateToProps)(Hobbies);

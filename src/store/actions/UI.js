@@ -7,9 +7,9 @@ export const changeLanguage = (lang) => {
     }
 }
 
-export const changeTheme = (themeArg) => {
+export const changeTheme = (themeType) => {
     return {
         type: actionTypes.CHANGE_THEME,
-        theme: themeArg
+        theme: themeType
     }
 }

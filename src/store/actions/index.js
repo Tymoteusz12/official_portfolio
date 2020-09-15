@@ -1,0 +1,1 @@
+export {changeLanguage, changeTheme} from './UI';

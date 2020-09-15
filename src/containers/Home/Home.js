@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './Home.module.css';
 import {withRouter} from 'react-router-dom';
 import {CSSTransition} from 'react-transition-group';
+import {connect} from 'react-redux';
 import {textSmoothTransition, imgSmoothTransition} from '../../shared/transitionClasses';
 class Home extends Component {
 
@@ -77,9 +78,9 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
-        language : state.UIReducer.language,
-        theme : state.UIReducer.theme
+        language : state.language,
+        theme : state.theme
     }
 }
 
-export default withRouter(Home);
+export default connect(mapStateToProps)(withRouter(Home));

@@ -10,6 +10,7 @@ import ContactData from './ContactData/ContactData.js';
 import {CSSTransition} from 'react-transition-group';
 import {imgSmoothTransition} from '../../../shared/transitionClasses';
 import {Link} from 'react-scroll';
+import {connect} from 'react-redux';
 class Summary extends Component{
     state = {
         hireReasonsPL: [
@@ -99,7 +100,7 @@ class Summary extends Component{
         hireReasonsCopy[0].visible = true;
 
         window.addEventListener('scroll', this.scrollHandler);
-         this.setState({shouldBeVisible: false})
+        this.setState({shouldBeVisible: false})
     }
 
     componentWillUnmount(){
@@ -164,9 +165,9 @@ class Summary extends Component{
 
 const mapStateToProps = state => {
     return {
-        language : state.UIReducer.language,
-        theme : state.UIReducer.theme
+        language : state.language,
+        theme : state.theme
     }
 }
 
-export default Summary;
+export default connect(mapStateToProps)(Summary);
