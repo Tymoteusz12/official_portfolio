@@ -21,3 +21,11 @@
 .active{
     text-decoration: underline;
 }
+
+@media (max-width: 800px){
+    .toggleWrapper{
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+    }
+}
