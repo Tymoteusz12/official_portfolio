@@ -1,12 +1,17 @@
 .toggleWrapper{
-    padding: 0 25px;
+    padding: 10px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: center; 
     align-items: center;
     font-size: 24px;
     width: 20%;
     height: 150px;
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.comment{
+    font-size: 10px;
 }
 
 .toggleWrapper p{
@@ -20,12 +25,4 @@
 
 .active{
     text-decoration: underline;
-}
-
-@media (max-width: 1100px){
-    .toggleWrapper{
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 10px;
-    }
 }

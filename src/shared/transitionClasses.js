@@ -1,5 +1,4 @@
 import classes from './transition.module.css';
-import buttonClasses from '../containers/Settings/toggleTheme/toggle.module.css';
 
 export const textSmoothTransition = {
     enter: classes['textToggle-enter'],
@@ -23,12 +22,4 @@ export const pageTransition = {
     enterDone: classes['page-enter-done'],
     exit: classes['page-exit'],
     exitDone: classes['page-exit-done']
-}
-
-export const buttonChanger={
-    enter: buttonClasses['buttonToggle-enter'],
-    enterActive: buttonClasses['buttonToggle-enter-active'],
-    enterDone: buttonClasses['buttonToggle-enter-done'],
-    exit: buttonClasses['buttonToggle-exit'],
-    exitDone: buttonClasses['buttonToggle-exit-done']
 }

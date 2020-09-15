@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './settings.module.css';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
-import ToggleTheme from './toggleTheme/toggle';
+
 class Settings extends Component{
 
     changeToEnglish = () => {
@@ -30,7 +30,6 @@ class Settings extends Component{
                         ? classes.active
                         : null}>ENG</p>
                 </div>    
-                <ToggleTheme/>
             </div>
         );
     }
