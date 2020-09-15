@@ -40,10 +40,10 @@ class App extends Component {
           classNames={pageTransition}
           timeout = {0}>
           <Switch>
-            <Route path={this.props.location.pathname + '/Start'} render={ () => <Suspense fallback={<Spinner/>}><LazyStart /></Suspense>}/>
-            <Route path={this.props.location.pathname + '/Skills'} render={ () => <Suspense fallback={<Spinner/>}><LazySkills /></Suspense>}/>
-            <Route path={this.props.location.pathname + '/Start'} render={ () => <Suspense fallback={<Spinner/>}><LazyHire/></Suspense>}/>
-            <Redirect from='/' to={this.props.location.pathname + '/Start'}/>
+            <Route path={'/official_portfolio' + '/Start'} render={ () => <Suspense fallback={<Spinner/>}><LazyStart /></Suspense>}/>
+            <Route path={'/official_portfolio' + '/Skills'} render={ () => <Suspense fallback={<Spinner/>}><LazySkills /></Suspense>}/>
+            <Route path={'/official_portfolio' + '/Start'} render={ () => <Suspense fallback={<Spinner/>}><LazyHire/></Suspense>}/>
+            <Redirect from='/' to={'official_portfolio'}/>
           </Switch>
         </CSSTransition>
       </TransitionGroup>
