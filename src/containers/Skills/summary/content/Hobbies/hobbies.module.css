@@ -23,7 +23,7 @@
 .hobbies ul li{
     display: flex;
     font-size: 22px;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 250px;
     min-height: 100px;
@@ -31,6 +31,15 @@
     box-shadow: 4px 6px 6px 2px gray;
     margin: 10px;
     padding: 15px 25px;
+}
+
+.hobbies ul li i{
+    width: 50px;
+}
+
+.hobbies ul li p{
+    text-align: center;
+    width: 200px;
 }
 
 @media (max-width: 600px){

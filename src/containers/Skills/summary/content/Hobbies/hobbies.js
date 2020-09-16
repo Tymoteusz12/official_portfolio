@@ -60,7 +60,7 @@ class Hobbies extends Component {
     }
 
     scrollHandler = () => {
-        let toggleVisibility = handleScroll('hobbies', 12);
+        let toggleVisibility = handleScroll('hobbies', 8);
         this.setState({shouldBeVisible: toggleVisibility})
     }
 
@@ -69,16 +69,24 @@ class Hobbies extends Component {
         if(this.props.language === 'PL'){
             hobbiesToRender = this.state.interestsPL.map(interest =>{
                 return  (<li key={interest.name}>
-                            <i className={interest.image}></i>
-                            <p><em>{interest.name}</em></p>
+                            <div>
+                                <i className={interest.image}></i>
+                            </div>
+                            <div>
+                                <p><em>{interest.name}</em></p>
+                            </div>
                         </li>)
             })
         }
         else{
             hobbiesToRender = this.state.interestsENG.map(interest =>{
                 return  (<li key={interest.name}>
-                            <i className={interest.image}></i>
-                            <p><em>{interest.name}</em></p>
+                            <div>
+                                <i className={interest.image}></i>
+                            </div>
+                            <div>
+                                <p><em>{interest.name}</em></p>
+                            </div>
                         </li>)
         })
     }
