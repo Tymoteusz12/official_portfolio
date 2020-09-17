@@ -78,7 +78,7 @@ const Contact = props => {
                                 <li key={detail.data}>
                                     <p>{detail.content}</p>
                                 {detail.data.slice(0, 5) === 'https' 
-                                ?  <a href={detail.data} className={classes.data}>{detail.data}</a>
+                                ?  <a href={detail.data} target='blank' className={classes.data}>{detail.data}</a>
                                 :  <p className={classes.data}>{detail.data}</p>}  
                             </li>);
                         })
@@ -88,7 +88,7 @@ const Contact = props => {
                                 <li key={detail.data}>
                                     <p>{detail.content}</p>
                                 {detail.data.slice(0, 5) === 'https' 
-                                ?  <a href={detail.data} className={classes.data}>{detail.data}</a>
+                                ?  <a href={detail.data} target='blank' className={classes.data}>{detail.data}</a>
                                 :  <p className={classes.data}>{detail.data}</p>}  
                             </li>);
                         })
