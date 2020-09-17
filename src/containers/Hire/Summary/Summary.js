@@ -6,7 +6,12 @@ import Cooperation from '../../../resources/img/team_work.jpg';
 import Growth from '../../../resources/img/grow.jpg';
 import Investment from '../../../resources/img/investment.jpg';
 import Knowledge from '../../../resources/img/knowledge.jpg';
-import ContactData from './ContactData/ContactData.js';
+import ContactData from './ContactData/ContactData';
+import AmbitionMobile from '../../../resources/img/ambitionMobile.jpg';
+import CooperationMobile from '../../../resources/img/team_workMobile.jpg';
+import GrowthMobile from '../../../resources/img/growMobile.jpg';
+import InvestmentMobile from '../../../resources/img/investmentMobile.jpg';
+import KnowledgeMobile from '../../../resources/img/knowledgeMobile.jpg';
 import {CSSTransition} from 'react-transition-group';
 import {imgSmoothTransition} from '../../../shared/transitionClasses';
 import {Link} from 'react-scroll';
@@ -15,44 +20,44 @@ class Summary extends Component{
     state = {
         hireReasonsPL: [
             {content: 'Zatem, jeśli szukasz Front-end Developera, gotowego podjąć się ambitnych zadań',
-            image: Ambition,
+            image: window.innerWidth > 800 ? Ambition : AmbitionMobile,
             id: 'za',
             visible: false}, 
             {content: 'Otwartego na współpracę z doświadczonym zespołem deweloperów', 
-            image: Cooperation,
+            image: window.innerWidth > 800 ? Cooperation : CooperationMobile,
             id: 'ot',
             visible: false},
             {content: 'Unikającego stagnacji w rozwoju i zdobywaniu doświadczenia',
-            image:Growth,
+            image: window.innerWidth > 800 ? Growth : GrowthMobile,
             id: 'un',
             visible: false},
             {content: 'Stale wzbogacającego swoje portfolio, młodego i chcącego zmienić otaczającą rzeczywistość na lepszą',
-            image: Investment,
+            image: window.innerWidth > 800 ? Investment : InvestmentMobile,
             id: 'st',
             visible: false},
             {content: 'Posiadającego 9 projektów stworzonych z własnej inicjatywy i 1-go w ramach nauki stworzonego w trakcie kursu Reacta',
-            image: Knowledge,
+            image: window.innerWidth > 800 ? Knowledge : KnowledgeMobile,
             id: 'po',
             visible: false}],
         hireReasonsENG: [
             {content: 'Therefore, if you are looking for Front-end Developer, who is ready to take up ambitious tasks', 
-            image: Ambition,
+            image: window.innerWidth > 800 ? Ambition : AmbitionMobile,
             id: 'za',
             visible: false},
             {content: 'The person, who is open for cooperation with experienced developers',
-            image: Cooperation,
+            image: window.innerWidth > 800 ? Cooperation : CooperationMobile,
             id: 'ot',
             visible: false},
             {content: 'The avoidant of stagnation in growth and experience gains',
-            image: Growth,
+            image: window.innerWidth > 800 ? Growth : GrowthMobile,
             id: 'un',
             visible: false},
             {content: 'Continously enriching his portfolio, young and with will of world change to better',
-            image: Investment,
+            image: window.innerWidth > 800 ? Investment : InvestmentMobile,
             id: 'st',
             visible: false},
             {content: 'Owner of 9 independent projects created from my initiative, and one created during React Course',
-            image: Knowledge,
+            image: window.innerWidth > 800 ? Knowledge : KnowledgeMobile,
             id: 'po',
             visible: false}],
       

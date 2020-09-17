@@ -34,9 +34,12 @@
 }
 
 @media (max-width: 900px){
+    .Contact{
+        padding: 20px 0px 150px 0;
+    }
     .Contact h2{
         width: 90%;
-        margin: 50px auto;
+        margin: 0px auto;
     }
 
     .Contact ul li{

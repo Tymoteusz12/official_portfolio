@@ -38,7 +38,7 @@ const Contact = props => {
         let elem = document.getElementById('hire');
         let domRect = elem.getBoundingClientRect();
 
-        if(domRect.y < window.innerHeight/6){
+        if(domRect.y < window.innerHeight/4){
             setShouldBeVisible(true);
         }
         else{
