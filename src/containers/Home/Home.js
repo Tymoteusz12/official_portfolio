@@ -8,7 +8,7 @@ class Home extends Component {
 
     state = {
         meetingPL: 'Cześć! Witaj na mojej stronie :). Mam nadzieję, że znajdziesz potrzebne dla ciebie informacje. Aktualnie poszukuję pracy jako junior Front-end / React developer.',
-        meetingENG: 'Hey! Welcome on my site. I hope you are going to find informations necessary for you. Currently I am looking for junior Front-end / React developer position.',
+        meetingENG: 'Hey! Welcome at my site. I hope you are going to find informations necessary for you. Currently I am looking for junior Front-end / React developer position.',
         skillsPL: 'Dowiedz się, dlaczego warto mnie zatrudnić',
         skillsENG: 'Find out why I am worth hiring',
         skillsLabelPL: 'Umiejętności',

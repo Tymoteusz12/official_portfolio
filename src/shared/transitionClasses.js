@@ -23,3 +23,11 @@ export const pageTransition = {
     exit: classes['page-exit'],
     exitDone: classes['page-exit-done']
 }
+
+export const moveImage = {
+    enter: classes['image-enter'],
+    enterActive: classes['image-enter-active'],
+    enterDone: classes['image-enter-done'],
+    exit: classes['image-exit'],
+    exitDone: classes['image-exit-done']
+}

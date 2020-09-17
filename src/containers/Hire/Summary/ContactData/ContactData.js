@@ -13,7 +13,12 @@ const Contact = props => {
         {content: 'E-mail',
         data: 'tymoteusz.jagiello@interia.pl'},
         {content: 'Konto Github',
-        data: 'https://github.com/Tymoteusz12'}]);
+        data: 'https://github.com/Tymoteusz12'},
+        {content: 'Linkedin',
+        data: 'https://www.linkedin.com/in/tymoteusz-jagie%C5%82%C5%82o-1300601b6/'},
+        {content: 'Moje projekty',
+        data: 'https://tymoteusz12.github.io/Projects_web'}
+    ]);
 
     const [listENG] = useState([
         {content:'Phone number ',
@@ -21,7 +26,11 @@ const Contact = props => {
         {content: 'E-mail',
         data: 'tymoteusz.jagiello@interia.pl'},
         {content: 'Github account',
-        data: 'https://github.com/Tymoteusz12'}])
+        data: 'https://github.com/Tymoteusz12'},
+        {content: 'Linkedin',
+        data: 'https://www.linkedin.com/in/tymoteusz-jagie%C5%82%C5%82o-1300601b6/'},
+        {content: 'My projects',
+        data: 'https://tymoteusz12.github.io/Projects_web'}])
 
     const [shouldBeVisible, setShouldBeVisible] = useState(false);
 
