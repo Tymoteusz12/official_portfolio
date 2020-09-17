@@ -34,8 +34,6 @@
     font-weight: bold;
 }
 
-
-
 @media (max-width: 900px){
     .Contact{
         padding: 20px 0px 150px 0;
@@ -50,6 +48,7 @@
     }
 
     .data{
+        word-break: break-all;
         font-size: 18px;
     }
 }
