@@ -29,9 +29,12 @@
 }
 
 .data{
+    color: black;
     font-size: 22px;
     font-weight: bold;
 }
+
+
 
 @media (max-width: 900px){
     .Contact{

@@ -15,7 +15,7 @@ const Contact = props => {
         {content: 'Konto Github',
         data: 'https://github.com/Tymoteusz12'},
         {content: 'Linkedin',
-        data: 'https://www.linkedin.com/in/tymoteusz-jagie%C5%82%C5%82o-1300601b6/'},
+        data: 'https://linkedin.com/in/tymoteusz-jagiełło-1300601b6'},
         {content: 'Moje projekty',
         data: 'https://tymoteusz12.github.io/Projects_web'}
     ]);
@@ -28,7 +28,8 @@ const Contact = props => {
         {content: 'Github account',
         data: 'https://github.com/Tymoteusz12'},
         {content: 'Linkedin',
-        data: 'https://www.linkedin.com/in/tymoteusz-jagie%C5%82%C5%82o-1300601b6/'},
+        
+        data: 'linkedin.com/in/tymoteusz-jagiełło-1300601b6'},
         {content: 'My projects',
         data: 'https://tymoteusz12.github.io/Projects_web'}])
 
@@ -72,18 +73,24 @@ const Contact = props => {
                 <ul>
                     {props.language === 'PL' 
                         ? listPL.map(detail => {
+                            console.log(detail.data.slice(0, 4));
                             return (
-                            <li key={detail.data}>
-                                <p>{detail.content}</p>
-                                <p className={classes.data}>{detail.data}</p>
+                                <li key={detail.data}>
+                                    <p>{detail.content}</p>
+                                {detail.data.slice(0, 5) === 'https' 
+                                ?  <a href={detail.data} className={classes.data}>{detail.data}</a>
+                                :  <p className={classes.data}>{detail.data}</p>}  
                             </li>);
                         })
-                        : listENG.map(detail => {
+                        : listPL.map(detail => {
+                            console.log(detail.data.slice(0, 4));
                             return (
-                            <li key={detail.data}>
-                                <p>{detail.content}</p>
-                                <p className={classes.data}>{detail.data}</p>
-                            </li>)
+                                <li key={detail.data}>
+                                    <p>{detail.content}</p>
+                                {detail.data.slice(0, 5) === 'https' 
+                                ?  <a href={detail.data} className={classes.data}>{detail.data}</a>
+                                :  <p className={classes.data}>{detail.data}</p>}  
+                            </li>);
                         })
                     }
                 </ul>
