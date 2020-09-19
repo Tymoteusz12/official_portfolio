@@ -73,7 +73,6 @@ const Contact = props => {
                 <ul>
                     {props.language === 'PL' 
                         ? listPL.map(detail => {
-                            console.log(detail.data.slice(0, 4));
                             return (
                                 <li key={detail.data}>
                                     <p>{detail.content}</p>
@@ -82,8 +81,7 @@ const Contact = props => {
                                 :  <p className={classes.data}>{detail.data}</p>}  
                             </li>);
                         })
-                        : listPL.map(detail => {
-                            console.log(detail.data.slice(0, 4));
+                        : listENG.map(detail => {
                             return (
                                 <li key={detail.data}>
                                     <p>{detail.content}</p>
