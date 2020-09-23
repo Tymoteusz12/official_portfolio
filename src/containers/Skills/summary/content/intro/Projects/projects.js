@@ -9,7 +9,7 @@ const Proj = props => {
     const [headerPL] = useState('Stworzyłem specjalną stronę dla moich projektów. Zachęcam do jej sprawdzenia, gdyż potwierdza moje umiejętności wymienione poniżej.');
     const [headerENG] = useState('I created special website, where I put my personal projects. You are welcomed there.')
     const [attentionPL] = useState('Mała notka - sprawdź również proszę projekty nie związane z rozwojem aplikacji webowych, gdyż zostały dodane by ukazać moje umiejętności programowania oraz mogą mnie wyróżniać na tle potencjalnych kandydatów.');
-    const [attentionENG] =useState('Small note - take a glimpse also  on projects that are not related with web development, cause they may show my skills as a developer and they may mark out me beneath other candidates.') 
+    const [attentionENG] =useState('Small note - take a glimpse also  on projects that are not related with web development, cause they may show my skills as a developer and they may mark me out among other candidates.') 
     const [labelPL] = useState('Sprawdź projekty');
     const [labelENG] = useState('Check projects');
     const [stayPL] = useState('Przejdź dalej');
