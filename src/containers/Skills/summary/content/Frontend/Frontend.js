@@ -20,6 +20,12 @@ const Frontend = props => {
         image: 'fas fa-sync'},
         {name: 'git',
         image:'fas fa-code-branch'},
+        {name:'REST',
+        image: 'fas fa-database'},
+        {name:'HTTP',
+        image: 'fas fa-code'},
+        {name:'Webpack',
+        image: 'fas fa-box-open'},
         {name: 'HTML5',
         image: 'fab fa-html5'},
         {name:'CSS3',
@@ -46,7 +52,7 @@ const Frontend = props => {
         }
     }, [])
 
-    const skillsToRender = abilities.map( ability =>(
+    const skillsToRender = abilities.map(ability =>(
             <li key={ability.name}>
             {ability.image !== '' 
             ? <i className={ability.image}></i>

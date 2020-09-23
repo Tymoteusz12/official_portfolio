@@ -29,7 +29,7 @@ const Contact = props => {
         data: 'https://github.com/Tymoteusz12'},
         {content: 'Linkedin',
         
-        data: 'linkedin.com/in/tymoteusz-jagiełło-1300601b6'},
+        data: 'https://linkedin.com/in/tymoteusz-jagiełło-1300601b6'},
         {content: 'My projects',
         data: 'https://tymoteusz12.github.io/Projects_web'}])
 

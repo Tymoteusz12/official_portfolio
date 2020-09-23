@@ -11,18 +11,20 @@ const Intro = props => {
         'Pasjonat nowoczesnych technologii',
         'Front-end developer to be',
         'Miłośnik astronomii i fizyki',
+        'Matematyczny świr',
         'Programista'
     ]);
     const [titlesENG] = useState([
         'Modern technology passionate',
         'Front-end developer to be',
         'Physics and astronomy lover',
+        'Math freak',
         'Programmer'
     ]);
     const [shortAboutPL] = useState(
-        'Programowanie pochłonęło mnie z początkiem 2019 roku. Od tamtego okresu poznałem 2 języki programowania i 1 język skryptowy, technologie do tworzenia stron internetowych oraz wykorzystywałem OpenGL wraz z GLSL programując w języku C++ grafikę 3D. W pisaniu kodu bardzo dobrze się odnajduję. Poszukuję okazji do zdobycia pierwszego doświadczenia zawodowego, gdyż takowego nie posiadam.');
+        'Programowanie pochłonęło mnie z początkiem 2019 roku. Od tamtego okresu poznałem 2 języki programowania i 1 język skryptowy, technologie do tworzenia stron internetowych oraz wykorzystywałem OpenGL wraz z GLSL programując w języku C++ grafikę 3D. W pisaniu kodu bardzo dobrze się odnajduję, ale chcę się jeszcze wiele nauczyć.');
     const [shortAboutENG] = useState(
-        'My programming journey started in the beginning of 2019. Since that time I learned 3 programming languages, web development technologies and modern OpenGL with shaders language. When I am programming I am like a kid in a candy shop. I start to release my potential. I am looking for opportunity to gain first job experience.'
+        'My programming journey started in the beginning of 2019. Since that time I learned 2 programming languages and one scripting language, web development technologies and modern OpenGL with shaders language, which I used during for 3D programming. When I am programming I am like a kid in a candy shop. I start to release my potential.'
     )   
 
     const [componentMount, setComponentMount] = useState();

@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.attention{
+    font-weight: bold !important;
+}
+
 .goForward{
     margin-left: 50px;
     padding: 0 15px;
