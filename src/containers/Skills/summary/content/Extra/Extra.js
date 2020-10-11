@@ -9,6 +9,10 @@ import {connect} from 'react-redux';
 const Extra = props => {
 
     const [abilities] = useState([
+        {name:'mongoDB',
+        image: 'fas fa-server'},
+        {name:'expressJS',
+        image: 'fas fa-code'},
         {name: 'Software architecture',
         image: 'fas fa-recycle'},
         {name: 'DOM/jQuery',
@@ -20,8 +24,6 @@ const Extra = props => {
         {name: 'C/C++',
         image: 'fab fa-cuttlefish'},
         {name: 'STL',
-        image: 'fas fa-microchip'},
-        {name: 'Algorithms and Data structures',
         image: 'fas fa-server'},
         {name: 'OpenGL',
         image: 'fas fa-cube'},
@@ -36,7 +38,7 @@ const Extra = props => {
     const [shouldBeVisible, setShouldBeVisible] = useState(false);
 
     function scrollHandler(){
-        setShouldBeVisible(handleScroll('extra', 8));
+        setShouldBeVisible(handleScroll('extra', 4));
     }
 
     useEffect(() => {

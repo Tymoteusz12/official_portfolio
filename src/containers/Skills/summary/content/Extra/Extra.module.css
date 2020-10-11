@@ -1,6 +1,7 @@
 .outside{
     padding: 100px 0 150px 0;
-    box-shadow: 0px 24px 1px -24px black;
+    -webkit-box-shadow: 0px 24px 1px -24px black;
+            box-shadow: 0px 24px 1px -24px black;
     opacity: 0;
 }
 

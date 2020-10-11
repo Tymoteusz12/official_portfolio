@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import * as actions from './store/actions/index';
 import Navigation from './containers/Navigation/Navigation';
 import {pageTransition} from './shared/transitionClasses';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
@@ -14,7 +16,8 @@ const LazyHire = lazy(() => import('./containers/Hire/Hire'));
 class App extends Component {
 
   state = {
-    preload : false
+    preload : false,
+    prevScroll: 0
   }
 
   preloadContainers = () => {
@@ -28,8 +31,19 @@ class App extends Component {
     }
   }
 
+  scrollHandler = () =>{
+    if(window.scrollY - this.state.prevScroll <= 0){
+      this.props.toggleMenuButton(true)
+      this.setState({prevScroll: window.scrollY})
+    }else{
+      this.props.toggleMenuButton(false)
+      this.setState({prevScroll: window.scrollY})
+  }
+}
+
   componentDidMount = () => {
     LazySkills.preload();
+    window.addEventListener('scroll', this.scrollHandler);
   }
   
   render(){
@@ -58,4 +72,10 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+const mapDispatchToProps = dispatch => {
+  return{
+      toggleMenuButton: (visible) => dispatch(actions.toggleMenuButton(visible))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(withRouter(App));

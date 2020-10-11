@@ -60,7 +60,7 @@ class Hobbies extends Component {
     }
 
     scrollHandler = () => {
-        let toggleVisibility = handleScroll('hobbies', 8);
+        let toggleVisibility = handleScroll('hobbies', 2);
         this.setState({shouldBeVisible: toggleVisibility})
     }
 

@@ -31,3 +31,11 @@ export const moveImage = {
     exit: classes['image-exit'],
     exitDone: classes['image-exit-done']
 }
+
+export const toggleButton = {
+    enter: classes['button-enter'],
+    enterActive: classes['button-enter-active'],
+    enterDone: classes['button-enter-done'],
+    exit: classes['button-exit'],
+    exitDone: classes['button-exit-done']
+}

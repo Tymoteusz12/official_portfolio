@@ -31,6 +31,7 @@ class Home extends Component {
     render(){
         return(
             <div className={classes.Home}>
+                <div className={classes.wrapper}>
                 <CSSTransition 
                     in = {this.state.componentMount}
                     classNames={textSmoothTransition}
@@ -71,6 +72,7 @@ class Home extends Component {
                         </div>
                     </div>
                  </CSSTransition>
+                 </div>
             </div>
         );
     };

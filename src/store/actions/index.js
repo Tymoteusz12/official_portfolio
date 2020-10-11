@@ -1,1 +1,1 @@
-export {changeLanguage, changeTheme} from './UI';
+export {changeLanguage, changeTheme, toggleMenuButton} from './UI';

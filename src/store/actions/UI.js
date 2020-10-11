@@ -13,3 +13,10 @@ export const changeTheme = (themeType) => {
         theme: themeType
     }
 }
+
+export const toggleMenuButton = (show) => {
+    return {
+        type: actionTypes.TOGGLE_MENU_BUTTON,
+        buttonVisible: show
+    }
+}

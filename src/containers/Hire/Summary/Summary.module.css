@@ -5,17 +5,28 @@
 .list{
     margin: 0 auto;
     list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 100px 0 100px 0;
 }
 
 .list li{
     opacity: 0;
     padding: 100px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .list li img{
@@ -36,14 +47,22 @@
 }
 
 .goToContact{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 50px auto 0 auto;
     padding: 0 15px;
     width: 100%;
-    box-shadow: 0px 3px 1px -2px black;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
     cursor: pointer;
+    -webkit-transition: .4s ease;
     transition: .4s ease;
     font-size: 24px;
 }
@@ -74,8 +93,13 @@
 
 @media (max-width: 600px){
     .list li{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .list li img, .list li p{

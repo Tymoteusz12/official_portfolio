@@ -1,42 +1,52 @@
 .textToggle-enter{
     opacity: 0 !important;
-    transform: translateY(10%);
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
 }
 
 .textToggle-enter-done{
-    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
     opacity: 1 !important;
+    -webkit-transition: all 1s ease;
     transition: all 1s ease;
 }
 
 .textToggle-exit{
     opacity: 0 !important;
+    -webkit-transition: opacity 1s;
     transition: opacity 1s;
 }
 
 .textToggle-exit-done{
     opacity: 0 !important; 
+    -webkit-transition: opacity 1s; 
     transition: opacity 1s;
 }
 
 .imgToggle-enter{
     opacity: 0 !important;
-    transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%);
 }
 
 .imgToggle-enter-done{
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
     opacity: 1 !important;
+    -webkit-transition: all .6s ease;
     transition: all .6s ease;
 }
 
 .imgToggle-exit{
     opacity: 0 !important;
+    -webkit-transition: opacity .6s;
     transition: opacity .6s;
 }
 
 .imgToggle-exit-done{
     opacity: 0 !important; 
+    -webkit-transition: opacity .6s; 
     transition: opacity .6s;
 }
 
@@ -46,16 +56,19 @@
 
 .page-enter-done{
     opacity: 1 !important;
+    -webkit-transition: all .6s ease;
     transition: all .6s ease;
 }
 
 .page-exit{
     opacity: 0 !important;
+    -webkit-transition: opacity .6s ease;
     transition: opacity .6s ease;
 }
 
 .page-exit-done{
     opacity: 0 !important; 
+    -webkit-transition: opacity .6s ease; 
     transition: opacity .6s ease;
 }
 
@@ -63,19 +76,22 @@
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+            transform: translate(-50%, -50%) !important;
     width: 270px;
-    height: 240px;
+    height: 238px;
 }
 
 .image-enter-done{
     position: fixed !important;
     left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+            transform: translate(-50%, -50%) !important;
     width: 540px !important;
     height: 474px !important;
     border: 1px solid black;
     cursor: default !important;
+    -webkit-transition: .6s ease;
     transition: .6s ease;
 }
 
@@ -86,7 +102,32 @@
 
 .image-exit-done{
     width: 270px !important;
-    height: 240px !important;
+    height: 238px !important;
+    -webkit-transition: .6s ease;
+    transition: .6s ease;
+}
+
+.button-enter{
+    z-index: 0 !important;
+    opacity: 0 !important;
+}
+
+.button-enter-done{
+    z-index: 50 !important;
+    opacity: 1;
+    -webkit-transition: .6s ease;
+    transition: .6s ease;
+}
+
+.button-exit{
+    z-index: 50 !important;
+    opacity: 1;
+}
+
+.button-exit-done{
+    z-index: 0 !important;
+    opacity: 0 !important;
+    -webkit-transition: .6s ease;
     transition: .6s ease;
 }
 

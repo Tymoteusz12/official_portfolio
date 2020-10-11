@@ -157,7 +157,7 @@ class Summary extends Component{
                             {this.props.language === 'PL' 
                             ? this.state.goToPL
                             : this.state.goToENG}</p>
-                        <i className="fas fa-mouse-pointer"></i>
+                        <i style={{color: "gray", textShadow: "0px 3px 3px gray"}} className="fas fa-mouse-pointer"></i>
                 </Link>
                 <ul className={classesLocal.list}>
                     {reasonsToRender}

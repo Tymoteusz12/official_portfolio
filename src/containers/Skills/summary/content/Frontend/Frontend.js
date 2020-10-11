@@ -8,8 +8,13 @@ import {connect} from 'react-redux';
 const Frontend = props => {
 
     const [abilities] = useState([
+        
         {name: 'JavaScript',
         image: 'fab fa-js'}, 
+        {name: 'TypeScript',
+        image: 'fas fa-tags'},
+        {name: 'NodeJS',
+        image: 'fab fa-node-js'},
         {name: 'React',
         image: 'fab fa-react'},
         {name: 'Redux',
@@ -22,8 +27,6 @@ const Frontend = props => {
         image:'fas fa-code-branch'},
         {name:'REST',
         image: 'fas fa-database'},
-        {name:'HTTP',
-        image: 'fas fa-code'},
         {name:'Webpack',
         image: 'fas fa-box-open'},
         {name: 'HTML5',
@@ -37,7 +40,7 @@ const Frontend = props => {
     const [shouldBeVisible, setShouldBeVisible] = useState(false);
 
     function scrollHandler(){
-        setShouldBeVisible(handleScroll('skills', 8));
+        setShouldBeVisible(handleScroll('skills', 4));
     }
 
     useEffect(() => {
