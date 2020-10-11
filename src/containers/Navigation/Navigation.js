@@ -23,8 +23,8 @@ class Navigation extends Component{
     }
 
     toggleMenu(){
-        if(!this.props.showMenuButton){
-            if(this.state.menuActive){
+        if(this.state.menuActive){
+            if(!this.props.showMenuButton){
                 const menu = document.getElementById('menu')
                 menu.classList.toggle(classes.activeMenu)
                 this.setState(prevState => (
