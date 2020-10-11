@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import classes from './Skills.module.css';
 import Summary from './summary/summary';
+import {withRouter} from 'react-router-dom'
 class Skills extends Component {
-
+    
     componentDidMount(){
         window.scrollTo(0, 0);
     }
@@ -17,4 +18,4 @@ class Skills extends Component {
     };
 }
 
-export default Skills;
+export default withRouter(Skills);
